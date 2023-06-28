@@ -11,7 +11,7 @@ const uri = 'https://fakestoreapi.com/products/' + id
 //get the product from the API
 const{ data:product } = await useFetch(uri)
 if (!product.value){
-  throw createError({ statusCode: 404, statusMessage:'product not found' })
+  throw createError({ statusCode: 404, statusMessage:'product not found', fatal: true })
 }
 
 definePageMeta({
